@@ -1,0 +1,41 @@
+body{
+font-family: 'Times New Roman', Times, serif;
+background-color: blanchedalmond;
+}
+
+.producto{
+background-color: burlywood;
+border-radius: 5px;
+margin-bottom: 20px;
+padding: 20px;
+position: relative;
+box-shadow: 0 20px 20px black;
+}
+
+.producto h2{
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.producto img{
+    display: block;
+    margin: auto;
+    max-width: 50%;
+    max-height: 50%;
+    border-radius: 4px;
+}
+
+.producto .descripción{
+color: #333;
+position: absolute;
+top: 10px;
+}
+
+.producto .precio{
+    color: black;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+

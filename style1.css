@@ -1,0 +1,43 @@
+
+#caja1{
+    position: relative;
+    background-color: magenta ;
+    width: 100px;
+    height: 100px;
+    top: 10px;
+    left: 20px;
+}
+
+.contenedor{
+position: relative;
+width: 300px;
+height: 200px;
+}
+
+.contenedor #caja2{
+position: absolute;
+background-color: red;
+width: 100px;
+height: 100px;
+top: 100px;
+left: 200px;
+}
+
+#caja3{
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    background-color: blue;
+    top: 20px;
+    right: 50px;
+}
+
+#caja4{
+    position: sticky;
+    background-color: yellow;
+    width: 100px;
+    height: 100px;
+    top: 20px;
+    bottom: 20px;
+}
+
