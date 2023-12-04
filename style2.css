@@ -16,27 +16,26 @@ header{
 }
 
 nav{
-    background-color: #5c74a0;
-    height: 30px;
+    background-color: #1b4796;
+    height: 40px;
     margin-top: 3%;
     display: flex;
-    width: 190vh;
-    font-family: "raleway", sans-serif;
-    font-weight: 700;
+    font-size: 25px;
+    width: auto;
 }
 
 nav ul{
     list-style-type: none;
     margin: 0%;
     display: flex;
-    ;
 }
 
 nav a{
     text-decoration: none;
-    color: black;
+    color: #f7a715;
     display: block;
     padding: 6px 15px;
+    font-family: 'Bebas Neue', sans-serif;
 }
 
 p{
