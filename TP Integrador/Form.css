@@ -1,0 +1,83 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+footer {
+  margin: 0;
+  height: 50vh;
+  background-color: #0e3273;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+footer h3 {
+  text-align: center;
+  margin: 10px 0 16px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 100;
+  font-size: 34px;
+  color: #f7a715;
+}
+
+form div {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 500;
+  justify-content: center;
+}
+
+.input-group {
+  font-size: 0.9rem;
+  position: relative;
+  --primary: #f7a715;
+  /* width: 100%;  */
+}
+
+.input-box {
+  position: relative;
+}
+  
+  .input {
+    all: unset;
+    color: #f7a715;
+    padding: 0.6rem 1rem;
+    border: 1px solid #5c74a0;
+    border-radius: 10px;
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin-bottom: 16px;
+    /* width: 45%; */
+  }
+
+  .label {
+    position: absolute;
+    top: 0.6rem;
+    left: 1rem;
+    color: #5c74a0;
+    pointer-events: none;
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .input:focus {
+    border: 1px solid var(--primary);
+  }
+  
+  .input:is(:focus, :valid) ~ label {
+    transform: translateY(-110%) scale(0.8) translateX(-16%);
+    background-color: #0e3273;
+    padding-inline: 0.3rem;
+    color: var(--primary);
+  }
+
+  .button {
+    background-color: #f7a715;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    color: #0e3273;
+    padding: 0.4rem 1rem;
+    border: solid;
+    border-radius: 10px;
+  }
