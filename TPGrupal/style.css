@@ -1,0 +1,263 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+    background-color: #0e3273;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar {
+    background-color: #0e3273;
+    color: #f7a715;
+    border-bottom: 2px solid #f7a715 ;
+}
+
+.container-fluid{
+    background-color: #0e3273;
+}
+
+.navbar-brand{
+    color:#f7a715;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.navbar-toggler-icon{
+    background-color:#f7a715;
+}
+
+.nav-link{
+    color: #f7a715;
+}
+
+.nav-item{
+    color: #f7a715;
+}
+
+.nav-link.active{
+    color: #f7a715;
+}
+
+.carousel{
+    margin-top: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.carousel-inner{
+    border-radius: 10px;
+}
+
+.carousel-item{
+    border-radius: 10px;
+}
+
+.carousel-control-prev-icon{
+    background-color: #0e3273;
+}
+
+.carousel-control-next-icon{
+    background-color: #0e3273;
+}
+
+.card-body{
+    background-color: #1b4796;
+    color: #f7a715;
+    border-top: 1px solid #f7a715;
+    padding: 10px;
+}
+
+.card-header{
+    background-color: #0e3273;
+    color: #f7a715;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.card-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22pt;
+}
+
+.card-text {
+    font-family: 'Raleway', sans-serif;
+    font-size: 10pt;
+}
+
+.card-footer.text-body-secondary{
+    background-color: #0e3273;
+}
+
+.btn.btn-primary{
+    color: #f7a715;
+    background-color: #0e3273;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14pt;
+}
+
+.btn.btn-outline-success{
+    color: #f7a715;
+    border-color: #f7a715;
+}
+
+.copy{
+    font-size: 20px;
+    color:#f7a715;
+    background-color: #0e3273;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+/* ---------Estilo del formulario viejo---------- */
+
+/* form{
+    max-width: 400px;
+    margin: auto;
+}
+
+label{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+input{
+    width: 95%;
+    padding: 8px;
+    border-radius: 3px;
+    font-size: 20px;
+    border: 1px solid #f7a715;
+    margin-bottom: 20px;
+}
+
+button{
+    background-color: #0e3273;
+    color: #f7a715;
+    transition: background-color 3s;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #f7a715;
+}
+
+h1{
+    color: #f7a715;
+    text-align: center;
+} */
+
+
+/* ---------Footer---------- */
+
+footer {
+    background-color: #0e3273;
+}
+
+footer h3 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 100;
+    font-size: 34px;
+    color: #f7a715;
+  }
+
+/* ---------Estilo del formulario nuevo---------- */
+
+.formulario {
+    margin: 0 0 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .input-group {
+    font-size: 0.9rem;
+    position: relative;
+    --primary: #f7a715;
+    justify-content: center;
+    /* width: 100%;  */
+  }
+  
+  .input-box {
+    position: relative;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+  }
+    
+    .input {
+      all: unset;
+      color: #f7a715;
+      padding: 0.6rem 1rem;
+      border: 1px solid #5c74a0;
+      border-radius: 10px;
+      transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+      margin-bottom: 16px;
+      /* width: 45%; */
+    }
+  
+    .label {
+      position: absolute;
+      top: 0.6rem;
+      left: 1rem;
+      color: #5c74a0;
+      pointer-events: none;
+      transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .input:focus {
+      border: 1px solid var(--primary);
+    }
+    
+    .input:is(:focus, :valid) ~ label {
+      transform: translateY(-110%) scale(0.8) translateX(-16%);
+      background-color: #0e3273;
+      padding-inline: 0.3rem;
+      color: var(--primary);
+    }
+    .button {
+        background-color: #f7a715;
+        color: #0e3273;
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.2rem;
+        padding: 0.4rem 1rem;
+        border: none;
+        border-radius: 10px;
+        transition: background-color 0.3s, color 0.3s;
+      }
+      
+      .button:hover {
+        background-color: transparent;
+        color: #f7a715;
+        border: 1px solid #f7a715;
+      }
+
+.btn.btn-outline-success {
+    color: #f7a715;
+    font-family: 'Bebas Neue', sans-serif;
+    border-color: #f7a715;
+    transition: all 0.3s ease; 
+  }
+  
+  .btn.btn-outline-success:hover {
+    background-color: #f7a715;
+    font-family: 'Bebas Neue', sans-serif;
+    color: #0e3273;
+  }
+  .dropdown-menu {
+    background-color: #0e3273;  
+    font-family: 'Bebas Neue', sans-serif;
+    color: #f7a715;
+  }
+  .dropdown-item:hover {
+    color: #f7a715;
+  }
+  .nav-item {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #f7a715;
+  }
