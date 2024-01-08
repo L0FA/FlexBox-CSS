@@ -1,0 +1,567 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --navbar-height: 64px;
+  --azul-oscuro: #05235a;
+  --azul-medio: #0e3273;
+  --azul-medio-hover: #143D85;
+  --azul-claro: #1b4796;
+  --gris-azulado: #5c74a0;
+  --amarillo: #f7a715;
+  --blanco: #E4E8EF;
+  --gris-celeste: #AEBAD0;
+}
+
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  background-color: var(--azul-claro);
+}
+
+/* ----------INICIO Estilo de la barra de navegación---------- */
+.menu__wrapper {
+  display: flex;
+  position: fixed;
+  justify-content: space-between;
+  width: 100vw;
+  z-index: 2;
+  gap: 24px;
+  background-color: var(--azul-claro);
+  height: var(--navbar-height);
+  padding: 0px 16px;
+  align-items: center;
+  box-shadow: 0 10px 10px 0 rgba(5, 35, 90, 0.12);
+}
+
+.menu__bar {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 28px;
+  color: #F7A715;
+  text-decoration: none;
+}
+
+.logo svg {
+  fill: var(--azul-medio);
+}
+
+.navigation {
+  margin-left: 32px;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  align-items: center;
+  background-color: var(--azul-claro);
+}
+
+.navigation>li {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  align-items: center;
+  min-height: 32px;
+}
+
+.navigation>li>a {
+  color: var(--blanco);
+  font-size: 14px;
+  text-decoration: none;
+  padding: 0 10px;
+}
+
+.navigation>li>a:hover {
+  color: var(--amarillo);
+}
+
+.navigation>li>button {
+  color: var(--blanco);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  margin: 0 -8x;
+  align-items: center;
+  min-height: 32px;
+  font-size: 14px;
+  gap: 4px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  flex-wrap: nowrap;
+  border-radius: 4px;
+  padding: 4px 10px;
+  white-space: nowrap;
+  background: none;
+  display: flex;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+.navigation>li>button>svg {
+  margin-top: 2px;
+  fill: var(--blanco);
+  transition: all 0.2s ease-in-out;
+}
+
+
+.navigation>li:hover>button svg {
+  fill: var(--amarillo);
+  rotate: 180deg;
+}
+
+.navigation>li:hover>button {
+  color: var(--amarillo);
+  background-color: var(--azul-medio);
+}
+
+.navigation>li:hover .dropdown {
+  display: block;
+}
+
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: scale(0.99) translateY(-0.7em);
+      transform-origin: top;
+  }
+
+  to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+  }
+}
+
+/* dropdown menu */
+.dropdown__wrapper {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding-top: 60px;
+}
+
+.dropdown {
+  border-radius: 4px;
+  background-color: var(--azul-medio);
+  display: none;
+  padding: 8px;
+  width: 100%;
+  max-width: 500px;
+  border: 1px solid var(--azul-medio);
+  box-shadow:
+      0 50px 100px -20px rgba(0, 0, 0, .12),
+      0 30px 60px -30px rgba(0, 0, 0, .15);
+  z-index: 3;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.list-items-with-description {
+  list-style-type: none;
+  display: table-cell;
+  width: 50%;
+}
+
+.list-items-with-description li {
+  display: flex;
+  gap: 16px;
+  width: 100%;
+}
+
+.list-items-with-description li:hover {
+  background-color: var(--azul-medio-hover);
+  border-radius: 4px;
+}
+
+.item-title h3 {
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--blanco);
+  width: 180px;
+  padding: 6px;
+}
+
+.item-title h3:hover {
+  color: var(--amarillo);
+}
+
+.item-title p {
+  font-size: 11px;
+  font-weight: 400;
+  white-space: nowrap;
+  color: var(--blanco);
+}
+
+/* login sign-up buttons */
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.action-buttons a {
+  text-decoration: none;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  white-space: nowrap;
+  padding: 5px 10px 2px;
+  transition: all 0.2s ease-in-out;
+  line-height: 1.6rem;
+}
+
+.secondary {
+  background-color: var(--azul-medio);
+  color: var(--amarillo);
+  outline: none;
+  border-radius: 4px;
+}
+
+.secondary:hover {
+  background: var(--amarillo);
+  color: var(--azul-medio);
+}
+
+.primary {
+  color: var(--amarillo);
+  border-radius: 4px;
+  background-color: var(--azul-medio);
+  padding: 8px 16px;
+}
+
+.primary:hover {
+  background-color: var(--amarillo);
+  color: var(--azul-medio);
+}
+
+.menu-icon {
+  display: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+
+@media (max-width: 769px) {
+  .hide {
+      display: none;
+  }
+
+  .menu-icon {
+      display: flex;
+      z-index: 3;
+      align-items: center;
+      justify-content: center;
+      margin: 0 4px;
+      height: 24px;
+      width: 24px;
+      min-width: 24px;
+      min-height: 24px;
+      pointer-events: all;
+      gap: 4px;
+      flex-direction: column;
+  }
+
+  .navigation--mobile {
+      top: 0;
+      position: absolute;
+      right: 0;
+      display: flex;
+      padding: 90px 30px;
+      min-height: 100%;
+      background-color: var(--azul-claro);
+      gap: 8px;
+      flex-direction: column;
+      align-items: flex-start;
+      opacity: 0.95;
+      animation: fadein 0.3s forwards;
+      box-shadow: -10px 0 10px 0 rgba(5, 35, 90, 0.12);
+  }
+
+  @keyframes fadein {
+      0% {
+          opacity: 0;
+          width: 0;
+          height: 0;
+      }
+
+      100% {
+          opacity: 1;
+          width: 50%;
+          height: calc(100vh - var(--navbar-height));
+      }
+  }
+
+  .navigation--mobile--fadeout {
+      animation: fadeout 300ms forwards;
+  }
+
+  @keyframes fadeout {
+      0% {
+          opacity: 1;
+          width: 50%;
+          height: calc(100vh - var(--navbar-height));
+      }
+
+      100% {
+          opacity: 0;
+          width: 0;
+          height: 0;
+      }
+  }
+}
+/* ----------FIN estilo de la barra de navegación nueva---------- */
+
+
+/* ----------INICIO estilo del carrusel---------- */
+.carousel{
+    padding-top: 74px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.carousel-inner{
+    border-radius: 10px;
+}
+
+.carousel-item{
+    border-radius: 10px;
+}
+
+.carousel-control-prev-icon{
+    background-color: #0e3273;
+}
+
+.carousel-control-next-icon{
+    background-color: #0e3273;
+}
+/* ----------FIN estilo del carrusel---------- */
+
+
+/* ----------INICIO estilo cajas pelis---------- */
+.card-body{
+    background-color: #1b4796;
+    color: #f7a715;
+    border-top: 1px solid #f7a715;
+    padding: 10px;
+}
+
+.card-header{
+    background-color: #0e3273;
+    color: #f7a715;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.card-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22pt;
+}
+
+.card-text {
+    font-family: 'Raleway', sans-serif;
+    font-size: 10pt;
+}
+
+.card-footer.text-body-secondary{
+    background-color: #0e3273;
+}
+
+.btn.btn-primary{
+    color: #f7a715;
+    background-color: #0e3273;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14pt;
+}
+
+.btn.btn-price {
+  color: #f7a715;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+}
+
+.btn.btn-outline-success{
+    color: #f7a715;
+    border-color: #f7a715;
+}
+
+.copy{
+    font-size: 20px;
+    color:#f7a715;
+    background-color: #0e3273;
+    font-family: 'Bebas Neue', sans-serif;
+}
+/* ----------FIN estilo cajas pelis---------- */
+
+
+/* ---------INICIO estilo Footer---------- */
+footer {
+    background-color: var(--azul-claro);
+}
+
+footer h3 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 100;
+    font-size: 34px;
+    color: var(--amarillo);
+  }
+
+/* ---------INICIO Estilo del formulario nuevo---------- */
+
+.formulario {
+    margin: 0 0 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .input-group {
+    font-size: 0.9rem;
+    position: relative;
+    color: var(--amarillo);
+    justify-content: center;
+    /* width: 100%;  */
+  }
+  
+  .input-box {
+    position: relative;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+  }
+    
+  .input {
+    all: unset;
+    color: var(--amarillo);
+    padding: 0.5rem 1rem;
+    border: 1.4px solid var(--gris-celeste);
+    border-radius: 10px;
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin-bottom: 14px;
+    /* width: 45%; */
+  }
+
+  .label {
+    position: absolute;
+    top: 0.6rem;
+    left: 1rem;
+    color: var(--gris-celeste);
+    pointer-events: none;
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .input:focus {
+    border: 1.4px solid var(--amarillo);
+  }
+  
+  .input:is(:focus, :valid) ~ label {
+    transform: translateY(-95%) scale(0.8) translateX(-16%);
+    background-color: var(--azul-claro);
+    padding-inline: 0.3rem;
+    color: var(--amarillo);
+  }
+
+  .button {
+    font-family: 'Bebas Neue', sans-serif;
+    /* font-family: 'Raleway', sans-serif;
+    font-weight: 500; */
+    background-color: var(--azul-medio);
+    color: var(--amarillo);
+    font-size: 1.2rem;
+    /* font-size: 1rem; */
+    padding: 0.3rem 1rem;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.2s, color 0.2s;
+  }
+    
+  .button:hover {
+    background-color: var(--amarillo);
+    color: var(--azul-medio);
+  }
+/* ---------FIN estilo del formulario nuevo---------- */
+
+
+/* ---INICIO estilo de los legales--- */
+.legales {
+  text-align: center;
+  color: var(--amarillo);
+  box-shadow: 0 -10px 10px 0 rgba(5, 35, 90, 0.12);
+
+}
+
+.legales h3 {
+  font-family: 'Bebas Neue', sans-serif;
+  font-weight: 400;
+}
+
+.legales #empresa {
+  font-size: 20px;
+  padding: 10px 0 8px;
+  background-color: var(--azul-claro);
+}
+
+.legales #direccion {
+  background-color: var(--azul-medio);
+  padding: 18px;
+}
+
+.legales #direccion h3 {
+  font-size: 30px;
+}
+
+.legales #copy {
+  background-color: var(--azul-claro);
+  padding: 6px 0 4px;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 20px;
+}
+
+/* ---FIN estilo de los legales--- */
+
+/* Inicio Formulario de Login */
+
+.divider:after,
+.divider:before {
+content: "";
+flex: 1;
+height: 1px;
+background: #eee;
+}
+
+.img-fluid{
+  height: 20%;
+  width: 120%;
+  margin-top: 70px;
+}
+
+
+.h-custom {
+height: calc(100% - 73px);
+}
+@media (max-width: 450px) {
+.h-custom {
+height: 100%;
+}
+}
+
+/* Fin Formulario Login */
+
+/* ---------FIN Footer---------- */

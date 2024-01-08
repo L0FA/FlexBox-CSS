@@ -1,0 +1,558 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --navbar-height: 64px;
+  --azul-oscuro: #05235a;
+  --azul-medio: #0e3273;
+  --azul-medio-hover: #143D85;
+  --azul-claro: #1b4796;
+  --gris-azulado: #5c74a0;
+  --amarillo: #f7a715;
+  --blanco: #E4E8EF;
+  --gris-celeste: #AEBAD0;
+  --fondo-desplegado-indiv: #0e3273;
+}
+
+body {
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  background-color: var(--azul-claro);
+}
+
+/* ----------INICIO Estilo del navbar---------- */
+/* .navbar {
+    background-color: #0e3273;
+    color: #f7a715;
+    border-bottom: 2px solid #f7a715 ;
+}
+
+.container-fluid{
+    background-color: #0e3273;
+}
+
+.navbar-brand{
+    color:#f7a715;
+    font-weight: bold;
+    font-size: 24px;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.navbar-toggler-icon{
+    background-color:#f7a715;
+}
+
+.nav-link{
+    color: #f7a715;
+}
+
+.nav-item{
+    color: #f7a715;
+}
+
+.nav-link.active{
+    color: #f7a715;
+} 
+
+.dropdown-menu {
+    background-color: #0e3273;  
+    font-family: 'Bebas Neue', sans-serif;
+    color: #f7a715;
+  }
+
+  .dropdown-item:hover {
+    color: #f7a715;
+  }
+  
+  .nav-item {
+    font-family: 'Bebas Neue', sans-serif;
+    color: #f7a715;
+  }
+  
+  .btn.btn-outline-success {
+      color: var(--amarillo);
+      font-family: 'Bebas Neue', sans-serif;
+      border-color: var(--amarillo);
+      transition: all 0.2s ease; 
+  }
+  
+  .btn.btn-outline-success:hover {
+    background-color: var(--amarillo);
+    font-family: 'Bebas Neue', sans-serif;
+    color: var(--azul-medio);
+  }*/
+
+
+/* ----------FIN estilo del navbar---------- */
+
+/* ----------INICIO Estilo de la barra de navegación nueva---------- */
+.menu__wrapper {
+  display: flex;
+  position: relative;
+  /* position: fixed; */
+  justify-content: space-between;
+  width: 100vw;
+  /* z-index: 2; */
+  gap: 24px;
+  background-color: var(--azul-claro);
+  height: var(--navbar-height);
+  padding: 0px 16px;
+  align-items: center;
+  box-shadow: 0 2px 0 0 rgba(0, 0, 0, .1);
+}
+
+.menu__bar {
+  display: flex;
+  align-items: center;
+}
+
+.logo {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 24px;
+  color: var(--amarillo);
+  text-decoration: none;
+}
+
+.logo svg {
+  fill: var(--azul-medio);
+}
+
+.navigation {
+  margin-left: 32px;
+  display: flex;
+  flex-direction: row;
+  list-style-type: none;
+  align-items: center;
+  gap: 16px;
+  background-color: var(--azul-claro);
+}
+
+.navigation>li {
+  display: flex;
+  position: relative;
+  cursor: pointer;
+  align-items: center;
+  min-height: 36px;
+}
+
+.navigation>li>a {
+  color: var(--blanco);
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.navigation>li>a:hover {
+  color: var(--amarillo);
+}
+
+.navigation>li>button {
+  color: var(--blanco);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  z-index: 1;
+  margin-right: -4px;
+  align-items: center;
+  min-height: 36px;
+  font-size: 14px;
+  gap: 4px;
+  font-family: 'Raleway', sans-serif;
+  font-weight: 400;
+  flex-wrap: nowrap;
+  border-radius: 4px;
+  padding: 4px 10px;
+  white-space: nowrap;
+  background: none;
+  display: flex;
+  position: relative;
+  transition: all 0.2s ease-in-out;
+}
+
+.navigation>li>button>svg {
+  margin-top: 2px;
+  fill: var(--blanco);
+  transition: all 0.2s ease-in-out;
+}
+
+
+.navigation>li:hover>button svg {
+  fill: var(--amarillo);
+  rotate: 180deg;
+}
+
+.navigation>li:hover>button {
+  color: var(--amarillo);
+  background-color: var(--azul-medio);
+}
+
+.navigation>li:hover .dropdown {
+  display: block;
+}
+
+
+@keyframes fadeIn {
+  from {
+      opacity: 0;
+      transform: scale(0.99) translateY(-0.7em);
+      transform-origin: top;
+  }
+
+  to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+  }
+}
+
+/* dropdown menu */
+.dropdown__wrapper {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  padding-top: 60px;
+}
+
+.dropdown {
+  border-radius: 4px;
+  background-color: var(--azul-medio);
+  display: none;
+  padding: 8px;
+  width: 100%;
+  max-width: 600px;
+  border: 1px solid var(--azul-medio);
+  box-shadow:
+      0 50px 100px -20px rgba(0, 0, 0, .12),
+      0 30px 60px -30px rgba(0, 0, 0, .15);
+  z-index: 2;
+  animation: fadeIn 0.2s ease-in-out;
+}
+
+.list-items-with-description {
+  list-style-type: none;
+  display: grid;
+  width: 100%;
+  grid-template-columns: 1fr 1fr;
+}
+
+.list-items-with-description li {
+  display: flex;
+  padding: 8px;
+  gap: 16px;
+  width: 100%;
+}
+
+.list-items-with-description li:hover {
+  background-color: var(--azul-medio-hover);
+  border-radius: 4px;
+}
+
+.list-items-with-description li svg {
+  stroke: var(--amarillo);
+  stroke-width: 1.2px;
+  width: 24px;
+  height: 24px;
+}
+
+.item-title h3 {
+  font-weight: 500;
+  font-size: 14px;
+  color: var(--amarillo);
+}
+
+.item-title p {
+  font-size: 11px;
+  font-weight: 400;
+  white-space: nowrap;
+  color: var(--blanco);
+}
+
+/* login sign-up buttons */
+
+.action-buttons {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.action-buttons a {
+  text-decoration: none;
+  font-size: 14px;
+  font-weight: 500;
+  white-space: nowrap;
+  padding: 4px 10px;
+  transition: all 0.2s ease-in-out;
+  line-height: 1.25rem;
+}
+
+.secondary {
+  background: none;
+  color: var(--amarillo);
+  outline: none;
+  border: 1.4px solid var(--amarillo);
+  border-radius: 4px;
+  /* font-family: 'Bebas Neue', sans-serif; */
+}
+
+.secondary:hover {
+  background: var(--amarillo);
+  color: var(--azul-medio);
+}
+
+.primary {
+  color: var(--amarillo);
+  border-radius: 4px;
+  border: 1.6px solid var(--azul-medio);
+  background-color: var(--azul-medio);
+  padding: 8px 16px;
+  /* font-family: 'Bebas Neue', sans-serif; */
+}
+
+.primary:hover {
+  background-color: var(--amarillo);
+  border: 1.6px solid var(--amarillo);
+  color: var(--azul-medio);
+}
+
+.burger-menu {
+  display: none;
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: transparent;
+}
+
+
+@media (max-width: 769px) {
+  .hide {
+      display: none;
+  }
+
+  .burger-menu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      height: 32px;
+      width: 32px;
+      min-width: 32px;
+      min-height: 32px;
+      pointer-events: all;
+      gap: 4px;
+      flex-direction: column;
+      /* border: 1px solid var(--gray-border); */
+  }
+
+  .burger-menu svg {
+      height: 20px;
+      stroke: var(--amarillo);
+      width: 20px;
+  }
+}
+/* ----------FIN estilo de la barra de navegación nueva---------- */
+
+
+.carousel{
+    margin-top: 25px;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.carousel-inner{
+    border-radius: 10px;
+}
+
+.carousel-item{
+    border-radius: 10px;
+}
+
+.carousel-control-prev-icon{
+    background-color: #0e3273;
+}
+
+.carousel-control-next-icon{
+    background-color: #0e3273;
+}
+
+.card-body{
+    background-color: #1b4796;
+    color: #f7a715;
+    border-top: 1px solid #f7a715;
+    padding: 10px;
+}
+
+.card-header{
+    background-color: #0e3273;
+    color: #f7a715;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+.card-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 22pt;
+}
+
+.card-text {
+    font-family: 'Raleway', sans-serif;
+    font-size: 10pt;
+}
+
+.card-footer.text-body-secondary{
+    background-color: #0e3273;
+}
+
+.btn.btn-primary{
+    color: #f7a715;
+    background-color: #0e3273;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 14pt;
+}
+
+.btn.btn-outline-success{
+    color: #f7a715;
+    border-color: #f7a715;
+}
+
+.copy{
+    font-size: 20px;
+    color:#f7a715;
+    background-color: #0e3273;
+    font-family: 'Bebas Neue', sans-serif;
+}
+
+/* ---------Estilo del formulario viejo---------- */
+
+/* form{
+    max-width: 400px;
+    margin: auto;
+}
+
+label{
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+input{
+    width: 95%;
+    padding: 8px;
+    border-radius: 3px;
+    font-size: 20px;
+    border: 1px solid #f7a715;
+    margin-bottom: 20px;
+}
+
+button{
+    background-color: #0e3273;
+    color: #f7a715;
+    transition: background-color 3s;
+    cursor: pointer;
+}
+
+button:hover{
+    background-color: #f7a715;
+}
+
+h1{
+    color: #f7a715;
+    text-align: center;
+} */
+
+
+/* ---------Footer---------- */
+
+footer {
+    background-color: var(--azul-claro);
+}
+
+footer h3 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-weight: 100;
+    font-size: 34px;
+    color: var(--amarillo);
+  }
+
+/* ---------Estilo del formulario nuevo---------- */
+
+.formulario {
+    margin: 0 0 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .input-group {
+    font-size: 0.9rem;
+    position: relative;
+    color: var(--amarillo);
+    justify-content: center;
+    /* width: 100%;  */
+  }
+  
+  .input-box {
+    position: relative;
+    font-family: 'Raleway', sans-serif;
+    font-weight: 500;
+  }
+    
+  .input {
+    all: unset;
+    color: var(--amarillo);
+    padding: 0.5rem 1rem;
+    border: 1.4px solid var(--gris-celeste);
+    border-radius: 10px;
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    margin-bottom: 14px;
+    /* width: 45%; */
+  }
+
+  .label {
+    position: absolute;
+    top: 0.6rem;
+    left: 1rem;
+    color: var(--gris-celeste);
+    pointer-events: none;
+    transition: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
+  
+  .input:focus {
+    border: 1.4px solid var(--amarillo);
+  }
+  
+  .input:is(:focus, :valid) ~ label {
+    transform: translateY(-95%) scale(0.8) translateX(-16%);
+    background-color: var(--azul-claro);
+    padding-inline: 0.3rem;
+    color: var(--amarillo);
+  }
+
+  .button {
+    font-family: 'Bebas Neue', sans-serif;
+    /* font-family: 'Raleway', sans-serif;
+    font-weight: 500; */
+    background-color: var(--azul-medio);
+    color: var(--amarillo);
+    font-size: 1.2rem;
+    /* font-size: 1rem; */
+    padding: 0.3rem 1rem;
+    border: none;
+    border-radius: 10px;
+    transition: background-color 0.2s, color 0.2s;
+  }
+    
+  .button:hover {
+    background-color: var(--amarillo);
+    color: var(--azul-medio);
+  }
